@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+  "os"
+    "github.com/codegangsta/cli"
+    )
 
 func main() {
-     fmt.Printf("Hello, world.\n")
-     }
+  app := cli.NewApp()
+    app.Name = "morse"
+      app.Usage = "fight the loneliness!"
+        app.Action = func(c *cli.Context) {
+	    println("Hello friend!")
+	      }
+
+  app.Run(os.Args)
+}
